@@ -31,13 +31,7 @@ class Carnivore extends Animal {
     if (obj.hidden === false) {
       obj.health -= 50;
     }
-
-    Animal.alive.forEach((elem) => {
-      if (elem.health > 0) {
-        return elem;
-      }
-      Animal.alive.splice(Animal.alive.indexOf(elem), 1);
-    });
+    Animal.alive = Animal.alive.filter((aliveObj) => aliveObj.health > 0);
   }
 }
 
